@@ -4,32 +4,36 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+
+    [SerializeField] float nextLevelDelay = 1f;
+    [SerializeField] float respawnDelay = 1f;
     void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
         {
-            case "Fuel":
-                AddFuel(other);
-                break;
             case "Friendly":
                 break;
 
             case "Finish":
-                LoadNextLevel();
+                StartSuccessSequence();
                 break;
             default:
-                Respawn();
+                StartCrashSequence();
                 break;
         }
     }
 
-    void AddFuel(Collision other)
+    void StartSuccessSequence()
     {
-        MeshRenderer mr = other.gameObject.GetComponent<MeshRenderer>();
-        mr.enabled = false;
-        Debug.Log("you got fuel");
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextLevel", nextLevelDelay);
     }
-
+    void StartCrashSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("Respawn", respawnDelay);
+    }
+    
     void Respawn()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
