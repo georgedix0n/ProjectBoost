@@ -491,6 +491,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1160572672310516194, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
+      propertyPath: failureSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b284cca4cb38965448806c63bf1a2e9a, type: 3}
+    - target: {fileID: 1160572672310516194, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
+      propertyPath: successSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 22d95ed3e803a634d81bbd988785f320, type: 3}
+    - target: {fileID: 1160572672310516194, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
+      propertyPath: rocketEngineSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 226e9f49a770295469a60a34aa94335e, type: 3}
     - target: {fileID: 1309043238687371124, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -535,10 +547,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2595836641273579433, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6903384975089119222, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 6988007560276726374, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
+      propertyPath: failureSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b284cca4cb38965448806c63bf1a2e9a, type: 3}
+    - target: {fileID: 6988007560276726374, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
+      propertyPath: successSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 22d95ed3e803a634d81bbd988785f320, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

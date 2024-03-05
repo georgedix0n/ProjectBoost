@@ -11,6 +11,9 @@ public class Movement : MonoBehaviour
     bool m_ToggleChange;
     [SerializeField] float mainThrust = 1000.0f;
     [SerializeField] float rotationThrust = 10.0f;
+
+    [SerializeField] AudioClip rocketEngineSound;
+
     
     // Start is called before the first frame update
     void Start()
@@ -32,7 +35,7 @@ public class Movement : MonoBehaviour
         {
             if (!m_audio.isPlaying)
             {
-                m_audio.Play();
+                m_audio.PlayOneShot(rocketEngineSound);
             }
             
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
