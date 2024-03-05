@@ -11,6 +11,7 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip successSound;
     [SerializeField] AudioClip failureSound;
     AudioSource m_audio;
+    bool isTransitioning = false;
 
     void Start()
     {
@@ -18,6 +19,11 @@ public class CollisionHandler : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
+        if (isTransitioning)
+        {
+            return;
+        }
+        
         switch (other.gameObject.tag)
         {
             case "Friendly":
@@ -30,23 +36,25 @@ public class CollisionHandler : MonoBehaviour
                 StartCrashSequence();
                 break;
         }
+        
+        
     }
 
     void StartSuccessSequence()
     {
-        if (!m_audio.isPlaying)
-            {
-                m_audio.PlayOneShot(successSound);
-            }
+        isTransitioning = true;
+        m_audio.Stop();
+        m_audio.PlayOneShot(successSound);
+            
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", nextLevelDelay);
     }
     void StartCrashSequence()
     {
-        if (!m_audio.isPlaying)
-            {
-                m_audio.PlayOneShot(failureSound);
-            }
+        isTransitioning = true;
+        m_audio.Stop();
+        m_audio.PlayOneShot(failureSound);
+        
         GetComponent<Movement>().enabled = false;
         Invoke("Respawn", respawnDelay);
     }
