@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1309043238687371124}
   - component: {fileID: 5255891470550329507}
   - component: {fileID: 1160572672310516194}
+  - component: {fileID: 6988007560276726374}
   - component: {fileID: 3046209271401971426}
   - component: {fileID: 4446366305527013476}
   - component: {fileID: 6972239290057603413}
@@ -59,6 +60,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainThrust: 1000
   rotationThrust: 100
+--- !u!114 &6988007560276726374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6903384975089119222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeacb6f5dc7157d4895799fcf251f2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &3046209271401971426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -160,7 +173,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 226e9f49a770295469a60a34aa94335e, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

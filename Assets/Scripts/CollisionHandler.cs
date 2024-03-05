@@ -1,6 +1,6 @@
 
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
@@ -11,10 +11,14 @@ public class CollisionHandler : MonoBehaviour
             case "Fuel":
                 AddFuel(other);
                 break;
-            case "Friendly" or "Finish":
+            case "Friendly":
+                break;
+
+            case "Finish":
+                LoadNextLevel();
                 break;
             default:
-                BlowUpRocket();
+                Respawn();
                 break;
         }
     }
@@ -26,9 +30,18 @@ public class CollisionHandler : MonoBehaviour
         Debug.Log("you got fuel");
     }
 
-    void BlowUpRocket()
+    void Respawn()
     {
-        Debug.Log("YOU DED");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    void LoadNextLevel()
+    {
+        int totalScenes = SceneManager.sceneCountInBuildSettings;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = (currentSceneIndex + 1) % totalScenes;
+        SceneManager.LoadScene(nextSceneIndex);
     }
     
 }

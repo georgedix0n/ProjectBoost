@@ -535,18 +535,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2595836641273579433, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
-      propertyPath: Mute
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2595836641273579433, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046209271401971426, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6903384975089119222, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -554,28 +542,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6903384975089119222, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1405268879707727556}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
---- !u!1 &1405268879707727548 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6903384975089119222, guid: e9cae3d9fc5c6bc4a82727c03ce348c8, type: 3}
-  m_PrefabInstance: {fileID: 1405268879707727547}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1405268879707727556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405268879707727548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeacb6f5dc7157d4895799fcf251f2ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5971901850752515482
 PrefabInstance:
   m_ObjectHideFlags: 0
