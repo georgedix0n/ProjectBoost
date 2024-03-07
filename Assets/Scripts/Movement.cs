@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -32,6 +30,30 @@ public class Movement : MonoBehaviour
     {
         ProcessThrust();
         ProcessRotation();
+        RespondToDebugKeys();
+
+    }
+
+    void RespondToDebugKeys()
+    {
+        SkipToNextLevel();
+        DisableCollisions();
+    }
+
+    void DisableCollisions()
+    {
+        if(Input.GetKey(KeyCode.C))
+        {
+            rb.detectCollisions = !rb.detectCollisions;
+        }
+    }
+
+    void SkipToNextLevel()
+    {
+        if(Input.GetKey(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
     }
 
     void ProcessThrust()
@@ -113,5 +135,13 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = true;
         transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
         rb.freezeRotation = false;
+    }
+
+    void LoadNextLevel()
+    {
+        int totalScenes = SceneManager.sceneCountInBuildSettings;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = (currentSceneIndex + 1) % totalScenes;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
