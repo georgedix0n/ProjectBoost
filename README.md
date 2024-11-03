@@ -40,3 +40,10 @@ Controls environmental object movement:
 2. **Rotate the Rocket**: Use the left and right arrow keys (or A/D keys) to rotate the rocket.
 3. **Navigate Levels**: Reach the finish zone without crashing into obstacles to progress to the next level.
 
+4. ## Setup
+
+1. Clone the repository.
+2. Open the project in Unity.
+3. Play!
+
+
